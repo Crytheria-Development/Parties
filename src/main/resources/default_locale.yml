@@ -1,0 +1,71 @@
+#
+# Companies v${version} by byteful#0001
+#
+# Default locale configuration
+# MiniMessage formatting supported: https://docs.advntr.dev/minimessage/format.html
+#
+command:
+  help:
+    - "<blue>------------------------------------------"
+    - "<gold><bold>List of party commands:"
+    - "<aqua>- /party create <gray>: <aqua>Create a party."
+    - "<aqua>- /party invite [player] <gray>: <aqua>Invite a player to your party."
+    - "<aqua>- /party join [inviter] <gray>: <aqua>Join a party."
+    - "<aqua>- /party disband <gray>: <aqua>Disband your party."
+    - "<aqua>- /party leave <gray>: <aqua>Leave your current party."
+    - "<aqua>- /party kick [player] <gray>: <aqua>Kick a player from your party."
+    - "<aqua>- /party chat [message] <gray>: <aqua>Send a party-only message."
+    - "<aqua>- /party list <gray>: <aqua>See a list of party members."
+    - "<aqua>- /party deny [inviter] <gray>: <aqua>Deny a party invite."
+    - "<blue>------------------------------------------"
+  no_permission: "<red>You do not have permission to execute this command!</red>"
+  success_reload: "<green>Successfully reloaded Parties configuration and data.</green>"
+  not_hub: "<red>This party command can only be ran in hub servers!</red>"
+  party:
+    already_in_party: "<red>You are already in a party!</red>"
+    not_invited: "<red>You were not invited to this player's party!</red>"
+    not_in_party: "<red>You are not in a party!</red>"
+    create:
+      success_create: "<green>Successfully created party! Invite players with </green><dark_green>/party invite [player]</dark_green><green>.</green>"
+    invite:
+      already_invited_player: "<red>You've already invited this player!</red>"
+      success_invite: "<green>Successfully invited {0} to your party.</green>"
+      received_invite: "<yellow>{0} has invited you to their party.</yellow> <green><click:run_command:/party join {1}>ACCEPT</click></green> <yellow>or</yellow> <red><click:run_command:/party deny {1}>DENY</click></red>"
+      invite_timed_out: "<gray>Party invitation to {0} has timed out.</gray>"
+      cannot_invite: "<red>Only the party leader can invite members to the party!</red>"
+      cannot_invite_self: "<red>You cannot invite yourself!</red>"
+    join:
+      success_join:
+        - "<blue>------------------------------------------"
+        - "<green>{0} has joined the party."
+        - "<blue>------------------------------------------"
+    disband:
+      success_disbanded: "<green>Your party has been disbanded.</green>"
+      cannot_disband: "<red>Only the party leader can disband the party!</red>"
+    leave:
+      success_leave: "<green>You have left the party.</green>"
+      cannot_leave: "<red>You cannot leave! Disband the party instead.</red>"
+    kick:
+      success_kick: "<green>Successfully kicked {0} from your party.</green>"
+      player_not_in_party: "<red>The provided player is not in your party!</red>"
+      cannot_kick: "<red>You do not have permission to kick players from this party!</red>"
+      cannot_kick_self: "<red>You cannot kick yourself!</red>"
+    chat:
+      format: "<blue>Party > </blue><white>{0}: {1}</white>"
+      toggle_on: "<yellow>Chat toggled <green>ON</green>.</yellow>"
+      toggle_off: "<yellow>Chat toggled <red>OFF</red>.</yellow>"
+    list:
+      header:
+        - "<blue>------------------------------------------"
+        - "<gold>Party Members ({0})</gold>"
+        - ""
+      online: " <green>•</green> "
+      offline: " <gray>•</gray> "
+      leader: "<yellow>Party Leader:</yellow> {0}"
+      members: "<yellow>Party Members:</yellow> {0}"
+      footer:
+        - ""
+        - "<blue>------------------------------------------"
+    deny:
+      success_deny: "<green>Denied {0}'s party invite.</green>"
+party_warping: "<gray>Warping you to your party leader's server...</gray>"

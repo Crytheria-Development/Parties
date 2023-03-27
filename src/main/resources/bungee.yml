@@ -1,0 +1,5 @@
+name: Parties
+version: '${version}'
+main: me.byteful.plugin.parties.PartiesPlugin
+description: Plugin for 4096#0005
+author: byteful

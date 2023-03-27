@@ -1,0 +1,20 @@
+#
+# Parties v${version} by byteful#0001
+#
+
+# The selected locale for messages.
+locale: "en_us"
+
+# Configuration for MongoDB data connection.
+mongo:
+  uri: ""
+  database: "Companies" # Same as companies so data can be "shared"
+
+# The amount of seconds before a party invite times out.
+party_invite_timeout: 30 # seconds
+
+# The list of servers in BungeeCord config that are hubs.
+# This will be used to determine if party commands can be run on a player's current server.
+# Case-sensitive!
+hub_servers:
+  - "hub"
