@@ -42,7 +42,7 @@ public class PartyManager implements Listener {
 
   @EventHandler
   public void onChat(ChatEvent event) {
-    if (!(event.getSender() instanceof final ProxiedPlayer player)) {
+    if (!(event.getSender() instanceof final ProxiedPlayer player) || event.getMessage().startsWith("/")) {
       return;
     }
 
