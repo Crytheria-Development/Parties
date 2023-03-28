@@ -29,12 +29,16 @@ command:
       success_create: "<green>Successfully created party! Invite players with </green><dark_green>/party invite [player]</dark_green><green>.</green>"
     invite:
       already_invited_player: "<red>You've already invited this player!</red>"
+      # {0} = player that was invited
       success_invite: "<green>Successfully invited {0} to your party.</green>"
+      # {0} = party inviter display name, {1} = party inviter real name
       received_invite: "<yellow>{0} has invited you to their party.</yellow> <green><click:run_command:/party join {1}>ACCEPT</click></green> <yellow>or</yellow> <red><click:run_command:/party deny {1}>DENY</click></red>"
+      # {0} = player that was invited
       invite_timed_out: "<gray>Party invitation to {0} has timed out.</gray>"
       cannot_invite: "<red>Only the party leader can invite members to the party!</red>"
       cannot_invite_self: "<red>You cannot invite yourself!</red>"
     join:
+      # {0} = name of player that joined party
       success_join:
         - "<blue>------------------------------------------"
         - "<green>{0} has joined the party."
@@ -46,26 +50,32 @@ command:
       success_leave: "<green>You have left the party.</green>"
       cannot_leave: "<red>You cannot leave! Disband the party instead.</red>"
     kick:
+      # {0} = player that was kicked
       success_kick: "<green>Successfully kicked {0} from your party.</green>"
       player_not_in_party: "<red>The provided player is not in your party!</red>"
       cannot_kick: "<red>You do not have permission to kick players from this party!</red>"
       cannot_kick_self: "<red>You cannot kick yourself!</red>"
     chat:
+      # {0} = player display name, {1} = chat message
       format: "<blue>Party > </blue><white>{0}: {1}</white>"
       toggle_on: "<yellow>Chat toggled <green>ON</green>.</yellow>"
       toggle_off: "<yellow>Chat toggled <red>OFF</red>.</yellow>"
     list:
+      # {0} = party member count
       header:
         - "<blue>------------------------------------------"
         - "<gold>Party Members ({0})</gold>"
         - ""
       online: " <green>•</green> "
       offline: " <gray>•</gray> "
+      # {0} = leader display name
       leader: "<yellow>Party Leader:</yellow> {0}"
+      # {0} = list of member display names
       members: "<yellow>Party Members:</yellow> {0}"
       footer:
         - ""
         - "<blue>------------------------------------------"
     deny:
+      # {0} = party inviter
       success_deny: "<green>Denied {0}'s party invite.</green>"
 party_warping: "<gray>Warping you to your party leader's server...</gray>"

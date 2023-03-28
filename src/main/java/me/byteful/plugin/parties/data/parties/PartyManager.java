@@ -5,10 +5,7 @@ import me.byteful.plugin.parties.api.locale.Messages;
 import net.kyori.adventure.text.Component;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
-import net.md_5.bungee.api.connection.Server;
 import net.md_5.bungee.api.event.ChatEvent;
-import net.md_5.bungee.api.event.ServerConnectEvent;
-import net.md_5.bungee.api.event.ServerSwitchEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 import org.jetbrains.annotations.Nullable;
@@ -53,23 +50,23 @@ public class PartyManager implements Listener {
     }
   }
 
-  @EventHandler
-  public void onLeaderServerSwitch(ServerSwitchEvent event) {
-    final UUID uniqueId = event.getPlayer().getUniqueId();
-    final Party party = getPlayerParty(uniqueId);
-    final Server to = event.getPlayer().getServer();
-    if (party != null && party.getLeader().equals(uniqueId)) {
-      for (UUID member : party.getMembers()) {
-        final ProxiedPlayer found = ProxyServer.getInstance().getPlayer(member);
-        if (found == null || found.getServer() == to) {
-          continue;
-        }
-
-        plugin.getLocaleManager().single().send(found, Messages.PARTY_WARPING);
-        found.connect(to.getInfo(), ServerConnectEvent.Reason.PLUGIN);
-      }
-    }
-  }
+//  @EventHandler
+//  public void onLeaderServerSwitch(ServerSwitchEvent event) {
+//    final UUID uniqueId = event.getPlayer().getUniqueId();
+//    final Party party = getPlayerParty(uniqueId);
+//    final Server to = event.getPlayer().getServer();
+//    if (party != null && party.getLeader().equals(uniqueId)) {
+//      for (UUID member : party.getMembers()) {
+//        final ProxiedPlayer found = ProxyServer.getInstance().getPlayer(member);
+//        if (found == null || found.getServer() == to) {
+//          continue;
+//        }
+//
+//        plugin.getLocaleManager().single().send(found, Messages.PARTY_WARPING);
+//        found.connect(to.getInfo(), ServerConnectEvent.Reason.PLUGIN);
+//      }
+//    }
+//  }
 
   public @Nullable Party getPlayerParty(UUID member) {
     return playerParty.get(member);

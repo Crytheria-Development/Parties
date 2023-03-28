@@ -66,7 +66,11 @@ public class Commands {
   @Description("Invite a player to your party.")
   public void onInvite(ProxiedPlayer sender, ProxiedPlayer target) {
     if (!isInParty(sender.getUniqueId())) {
-      plugin.getLocaleManager().single().send(sender, Messages.NOT_IN_PARTY);
+      //plugin.getLocaleManager().single().send(sender, Messages.NOT_IN_PARTY);
+      onCreate(sender);
+      if (isInParty(sender.getUniqueId())) {
+        onInvite(sender, target);
+      }
 
       return;
     }
