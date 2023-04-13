@@ -25,6 +25,8 @@ command:
     already_in_party: "<red>You are already in a party!</red>"
     not_invited: "<red>You were not invited to this player's party!</red>"
     not_in_party: "<red>You are not in a party!</red>"
+    other_not_in_party: "<red>This player is not in a party!</red>"
+    disbanded_party: "<green>Disbanded this player's current party.</green>"
     create:
       success_create: "<green>Successfully created party! Invite players with </green><dark_green>/party invite [player]</dark_green><green>.</green>"
     invite:

@@ -32,7 +32,9 @@ public enum Messages {
   CHAT_TOGGLE_OFF("command.party.chat.toggle_off"),
   CHAT_TOGGLE_ON("command.party.chat.toggle_on"),
   NOT_HUB("command.not_hub"),
-  CANNOT_SELFINVITE("command.party.invite.cannot_invite_self");
+  CANNOT_SELFINVITE("command.party.invite.cannot_invite_self"),
+  OTHER_NIP("command.party.other_not_in_party"),
+  SUCCESS_OTHER_DISBAND("command.party.disbanded_party");
 
   private final String key;
 

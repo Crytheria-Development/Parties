@@ -142,7 +142,27 @@ public class Commands {
   @Subcommand("disband")
   @CommandPermission("parties.disband")
   @Description("Disband your party.")
-  public void onDisband(ProxiedPlayer sender) {
+  public void onDisband(ProxiedPlayer sender, @Optional ProxiedPlayer other) {
+    if (other != null && !sender.hasPermission("parties.disband.other")) {
+      plugin.getLocaleManager().single().send(sender, Messages.NO_PERMISSION);
+
+      return;
+    }
+
+    if (other != null) {
+      final Party party = getParty(other.getUniqueId());
+      if (party == null) {
+        plugin.getLocaleManager().single().send(sender, Messages.OTHER_NIP);
+
+        return;
+      }
+
+      plugin.getPartyManager().disbandParty(party);
+      plugin.getLocaleManager().single().send(sender, Messages.SUCCESS_OTHER_DISBAND);
+
+      return;
+    }
+
     if (!isInParty(sender.getUniqueId())) {
       plugin.getLocaleManager().single().send(sender, Messages.NOT_IN_PARTY);
 
