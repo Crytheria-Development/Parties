@@ -1,0 +1,5 @@
+main: com.cjcameron92.crytheria.parties.PartyPlugin
+version: 1.0
+name: Parties
+api-version: 1.19
+depend: [CrytheriaCore]
